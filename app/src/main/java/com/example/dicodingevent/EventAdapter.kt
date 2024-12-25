@@ -1,14 +1,12 @@
 package com.example.dicodingevent
 
 import android.annotation.SuppressLint
-import android.media.metrics.Event
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.dicodingevent.data.response.ListEventsItem
 import com.example.dicodingevent.databinding.ItemUpcomingBinding
-import com.example.dicodingevent.ui.dashboard.DashboardViewModel
 
 class EventAdapter(private val onItemClick: (ListEventsItem) -> Unit) : RecyclerView.Adapter<EventAdapter.UpcomingViewHolder>() {
 
