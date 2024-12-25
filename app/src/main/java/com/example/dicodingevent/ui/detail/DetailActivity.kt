@@ -25,7 +25,6 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var tvEventTitle: TextView
     private lateinit var tvOwner: TextView
     private lateinit var tvTime: TextView
-    private lateinit var tvQuota: TextView
     private lateinit var tvDesc: TextView
     private lateinit var tvRegist: TextView
     private lateinit var tvCategory: TextView
@@ -45,7 +44,6 @@ class DetailActivity : AppCompatActivity() {
         tvEventTitle = findViewById(R.id.events_name)
         tvOwner = findViewById(R.id.owner)
         tvTime = findViewById(R.id.time)
-        tvQuota = findViewById(R.id.kuota)
         tvDesc = findViewById(R.id.descript)
         tvRegist = findViewById(R.id.regisrants)
         tvCategory = findViewById(R.id.category)
@@ -93,11 +91,10 @@ class DetailActivity : AppCompatActivity() {
     private fun displayDetail(event: Event){
         tvEventTitle.text = event.name
         tvOwner.text = event.ownerName
-        tvTime.text = "${event.beginTime} - ${event.endTime}"
-        tvQuota.text = "${event.quota} leave"
+        tvTime.text = "Jadwal Pelaksanaan: ${event.beginTime} - ${event.endTime}"
         tvDesc.text = HtmlCompat.fromHtml(event.description, HtmlCompat.FROM_HTML_MODE_LEGACY)
-        tvRegist.text = "Registrants: ${event.quota}"
-        tvCategory.text = "Category: ${event.quota}"
+        tvRegist.text = "Peserta: ${event.registrants} / ${event.quota}"
+        tvCategory.text = event.category
         eventLink = event.link
 
         Glide.with(this)

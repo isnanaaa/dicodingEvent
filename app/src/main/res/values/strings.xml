@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Dicoding Event</string>
-    <string name="title_home">Home</string>
-    <string name="title_upcoming">Upcoming</string>
-    <string name="title_finished">Finished</string>
+    <string name="title_home">Dicoding Event</string>
+    <string name="title_upcoming">Upcoming Events</string>
+    <string name="title_finished">Finished Events</string>
 
     <string name="events_name">Judul Event</string>
     <string name="description">Deskripsi</string>
@@ -15,9 +15,11 @@
     <string name="finished_events">Finished Events</string>
     <string name="owner">Owner</string>
     <string name="time">Time</string>
-    <string name="kuota">Kuota</string>
     <string name="registrant">Registrant</string>
     <string name="category">Category</string>
     <string name="descript">Description</string>
     <string name="register">Register</string>
+    <string name="home">Home</string>
+    <string name="upcomingbottom">Upcoming</string>
+    <string name="finished">Finished</string>
 </resources>
