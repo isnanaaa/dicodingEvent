@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Dicoding Event</string>
+    <string name="title_home">Home</string>
+    <string name="title_upcoming">Upcoming</string>
+    <string name="title_finished">Finished</string>
+
+    <string name="events_name">Judul Event</string>
+    <string name="description">Deskripsi</string>
+
+    <string name="seconds">%d seconds elapsed</string>
+    <string name="hello_dicoding">Hello Dicoding!</string>
+    <string name="dicoding_events">Dicoding Events</string>
+    <string name="rec">Recomendation Event</string>
+    <string name="upcoming">Upcoming Events</string>
+    <string name="finished_events">Finished Events</string>
+    <string name="owner">Owner</string>
+    <string name="time">Time</string>
+    <string name="kuota">Kuota</string>
+    <string name="registrant">Registrant</string>
+    <string name="category">Category</string>
+    <string name="descript">Description</string>
+    <string name="register">Register</string>
+</resources>
