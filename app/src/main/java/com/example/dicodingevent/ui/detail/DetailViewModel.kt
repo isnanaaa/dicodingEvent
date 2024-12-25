@@ -1,15 +1,14 @@
 package com.example.dicodingevent.ui.detail
 
-import android.os.Handler
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.dicodingevent.data.response.DetailResponse
 import com.example.dicodingevent.data.retrofit.ApiConfig
-import okhttp3.Call
-import okhttp3.Response
-import javax.security.auth.callback.Callback
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DetailViewModel : ViewModel() {
     private val _events = MutableLiveData<DetailResponse?>()
@@ -46,7 +45,7 @@ class DetailViewModel : ViewModel() {
                 }
             }
 
-            override fun onFailure(call: Call<DetailResponse, t: Throwable>){
+            override fun onFailure(call: Call<DetailResponse>, t: Throwable){
             _isLoad.value = false
             Log.e(TAG, "API Call Failed: ${t.message}")
             _errorMessage.value = "API Call Failed: ${t.message}"

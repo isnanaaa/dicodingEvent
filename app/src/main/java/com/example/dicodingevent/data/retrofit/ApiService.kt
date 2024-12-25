@@ -8,8 +8,8 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
     interface ApiService {
-//        @GET("com/example/dicodingevent/ui/detail/{id}")
-        @GET("events/{id}")
+        @GET("com/example/dicodingevent/ui/detail/{id}")
+//        @GET("events/{id}")
         fun getListEventsItem(
             @Path("id")
             id: String
@@ -24,5 +24,12 @@ import retrofit2.http.Query
         @GET("events/{id}")
         fun getDetailEvent(
             @Path("id") id: Int
+        ): Call<DetailResponse>
+
+        @GET("events")
+        fun getEvents(
+            @Query("active") active: Int = 1,
+            @Query("q") query: String? = null,
+            @Query("limit") limit: Int = 40
         ): Call<UpcomingResponse>
     }

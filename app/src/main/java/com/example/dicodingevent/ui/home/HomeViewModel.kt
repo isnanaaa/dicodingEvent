@@ -1,6 +1,5 @@
 package com.example.dicodingevent.ui.home
 
-import android.R
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -27,7 +26,7 @@ class HomeViewModel : ViewModel() {
 
     fun fetchUpcomingEvents(){
         _isLoad.value = true
-        val client = ApiConfig.getApiService().getListEventsItem()
+        val client = ApiConfig.getApiService().getEvents()
         client.enqueue(object : Callback<UpcomingResponse>{
 
             override fun onResponse(

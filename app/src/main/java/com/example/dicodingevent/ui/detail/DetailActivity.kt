@@ -11,11 +11,8 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.dicodingevent.R
@@ -36,23 +33,24 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var btnRegist: Button
     private lateinit var eventLink: String
 
+    private lateinit var event: Event
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         supportActionBar?.title = "Detail Event"
 
-        imageView = findViewById(R.id.)
-        tvEventTitle = findViewById(R.id.)
-        tvOwner = findViewById(R.id.)
-        tvTime = findViewById(R.id.)
-        tvQuota = findViewById(R.id.)
-        tvDesc = findViewById(R.id.)
-        tvRegist = findViewById(R.id.)
-        tvCategory = findViewById(R.id.)
-        progressBar = findViewById(R.id.)
-        btnRegist = findViewById(R.id.)
-        eventLink = findViewById(R.id.)
+        imageView = findViewById(R.id.img)
+        tvEventTitle = findViewById(R.id.events_name)
+        tvOwner = findViewById(R.id.owner)
+        tvTime = findViewById(R.id.time)
+        tvQuota = findViewById(R.id.kuota)
+        tvDesc = findViewById(R.id.descript)
+        tvRegist = findViewById(R.id.regisrants)
+        tvCategory = findViewById(R.id.category)
+        progressBar = findViewById(R.id.progressBar)
+        btnRegist = findViewById(R.id.btnregist)
 
         viewModel = ViewModelProvider(this)[DetailViewModel::class.java]
 
