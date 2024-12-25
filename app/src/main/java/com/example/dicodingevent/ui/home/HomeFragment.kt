@@ -75,18 +75,6 @@ class HomeFragment : Fragment() {
             }
         }
 
-//        val pref = SettingPreferences.getInstance(requireContext().dataStore)
-//        val factory = SettingViewModelFactory(pref)
-//        settingViewModel = ViewModelProvider(this, factory)[SettingViewModel::class.java]
-//
-//        settingViewModel.getThemeSetting().observe(viewLifecycleOwner){ isDarkModeActive ->
-//            if (isDarkModeActive){
-//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-//            } else{
-//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-//            }
-//        }
-
         viewModel.fetchUpcomingEvents()
         viewModel.fetchFinishedEvents()
     }

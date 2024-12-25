@@ -29,9 +29,9 @@ class UpcomingAdapter(
                 binding.eventName.text = event.name
                 binding.detail.text = event.summary
 
-                Glide.with(binding.imageEvent.context)
+                Glide.with(binding.imgEvent.context)
                     .load(event.mediaCover)
-                    .into(binding.imageEvent)
+                    .into(binding.imgEvent)
 
                 binding.root.setOnClickListener{
                     onItemClick(event)
