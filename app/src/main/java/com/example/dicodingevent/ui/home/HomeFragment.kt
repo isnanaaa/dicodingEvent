@@ -65,7 +65,11 @@ class HomeFragment : Fragment() {
             finishedAdapter.submitList(eventList)
         }
 
-        viewModel.isLoad.observe(viewLifecycleOwner){ isLoad ->
+        viewModel.isLoadUpComing.observe(viewLifecycleOwner){ isLoad ->
+            showLoad(isLoad)
+        }
+
+        viewModel.isLoadFinished.observe(viewLifecycleOwner){ isLoad ->
             showLoad(isLoad)
         }
 
@@ -80,7 +84,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun showLoad(isLoad: Boolean) {
-        binding.progressBar.visibility = if (isLoad) View.VISIBLE else View.GONE
+        binding.progressBarUpcoming.visibility = if (isLoad) View.VISIBLE else View.GONE
+        binding.progressBarFinished.visibility = if (isLoad) View.VISIBLE else View.GONE
     }
     
     override fun onDestroyView() {

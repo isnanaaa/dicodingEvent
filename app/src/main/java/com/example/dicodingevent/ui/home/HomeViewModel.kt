@@ -18,14 +18,17 @@ class HomeViewModel : ViewModel() {
     private val _finished = MutableLiveData<List<ListEventsItem>>()
     val finishedEvents: LiveData<List<ListEventsItem>> get() = _finished
 
-    private val _isLoad = MutableLiveData<Boolean>()
-    val isLoad: LiveData<Boolean> get() = _isLoad
+    private val _isLoadUpcoming = MutableLiveData<Boolean>()
+    val isLoadUpComing: LiveData<Boolean> get() = _isLoadUpcoming
+
+    private val _isFinished = MutableLiveData<Boolean>()
+    val isLoadFinished: LiveData<Boolean> get() = _isFinished
 
     private val _errorMessage = MutableLiveData<String?>()
     val errorMessage: LiveData<String?> get() = _errorMessage
 
     fun fetchUpcomingEvents(){
-        _isLoad.value = true
+        _isLoadUpcoming.value = true
         val client = ApiConfig.getApiService().getEvents()
         client.enqueue(object : Callback<UpcomingResponse>{
 
@@ -33,7 +36,7 @@ class HomeViewModel : ViewModel() {
                 call: Call<UpcomingResponse>,
                 response: Response<UpcomingResponse>
             ) {
-                _isLoad.value = false
+                _isLoadUpcoming.value = false
                 if (response.isSuccessful){
                     val responseBody = response.body()
                     if (responseBody != null){
@@ -45,14 +48,14 @@ class HomeViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<UpcomingResponse>, t: Throwable) {
-                _isLoad.value = false
+                _isLoadUpcoming.value = false
                 _errorMessage.value = t.message
             }
         })
     }
 
     fun fetchFinishedEvents(){
-        _isLoad.value = true
+        _isFinished.value = true
         val client = ApiConfig.getApiService().getFinishEvents()
         client.enqueue(object : Callback<UpcomingResponse>{
 
@@ -60,7 +63,7 @@ class HomeViewModel : ViewModel() {
                 call: Call<UpcomingResponse>,
                 response: Response<UpcomingResponse>
             ) {
-                _isLoad.value = false
+                _isFinished.value = false
                 if (response.isSuccessful){
                     val responseBody = response.body()
                     if (responseBody != null){
@@ -72,7 +75,7 @@ class HomeViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<UpcomingResponse>, t: Throwable) {
-                _isLoad.value = false
+                _isFinished.value = false
                 _errorMessage.value = t.message
             }
         })

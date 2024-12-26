@@ -91,11 +91,17 @@ class DetailActivity : AppCompatActivity() {
     private fun displayDetail(event: Event){
         tvEventTitle.text = event.name
         tvOwner.text = event.ownerName
-        tvTime.text = "Jadwal Pelaksanaan: ${event.beginTime} - ${event.endTime}"
+        tvTime.text = "Jadwal Pelaksanaan: ${event.beginTime}"
         tvDesc.text = HtmlCompat.fromHtml(event.description, HtmlCompat.FROM_HTML_MODE_LEGACY)
-        tvRegist.text = "Peserta: ${event.registrants} / ${event.quota}"
         tvCategory.text = event.category
         eventLink = event.link
+
+        val remainingQuota = event.quota - event.registrants
+        if (remainingQuota > 0){
+            tvRegist.append("sa kuota: $remainingQuota")
+        } else{
+            tvRegist.append("Kuota penuh")
+        }
 
         Glide.with(this)
             .load(event.mediaCover)

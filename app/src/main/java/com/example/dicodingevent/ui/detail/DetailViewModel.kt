@@ -21,7 +21,7 @@ class DetailViewModel : ViewModel() {
     val errorMessage: LiveData<String?> get() = _errorMessage
 
     companion object{
-        private const val TAG = "DetailVieeModel"
+        private const val TAG = "DetailViewModel"
     }
 
     fun fetchDetail(eventID: Int){
