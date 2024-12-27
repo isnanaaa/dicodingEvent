@@ -22,4 +22,5 @@
     <string name="home">Home</string>
     <string name="upcomingbottom">Upcoming</string>
     <string name="finished">Finished</string>
+    <string name="favorite_event">Favorite Event</string>
 </resources>

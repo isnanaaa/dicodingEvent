@@ -46,5 +46,4 @@ class EventAdapter(private val onItemClick: (ListEventsItem) -> Unit) : Recycler
             }
         }
     }
-
 }
